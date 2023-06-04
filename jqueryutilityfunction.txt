@@ -1,0 +1,282 @@
+####JQUERY UTILITY FUNCTION#####
+
+ 
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style>
+        div {
+            color: red;
+        }
+</style>
+
+</head>
+<body>
+
+ 
+
+    <!--####IS ARRAY METHOD()#####-->
+
+ 
+
+    <h1 style="color: green">
+        IS ARRAY METHOD
+</h1>
+
+ 
+
+    <h3>JQuery | isArray() method</h3>
+<b>Whether String is a Array Object : </b>
+<p id="gfg"></p>
+<b>Whether Array is a Array Object : </b>
+<p id="gfg1"></p>
+
+ 
+
+
+<!--####IN ARRAY METHOD()#####-->
+
+ 
+
+    <h1 style="color: green">
+        IN ARRAY METHOD
+</h1>
+
+ 
+
+    <p id="GFG_UP"></p>
+
+ 
+
+    <button onclick="gfg_Run()">
+        Click Here
+</button>
+
+ 
+
+    <p id="GFG_DOWN" style="color:green;"></p>
+
+ 
+
+
+<script src="jquery-3.6.4.min.js"></script>
+
+ 
+
+ 
+
+    <!--####IS ARRAY METHOD()#####-->
+
+ 
+
+
+<script>
+        $("#gfg").append("Shubham : " + $.isArray("Shubham"));
+
+ 
+
+        // array
+        $("#gfg1").append(
+            "[1, 3, 4, 6, 8] : " + $.isArray([1, 3, 4, 6, 8]));
+</script>
+
+ 
+
+
+<!--####IN ARRAY METHOD()#####-->
+<script>
+        var el_up = document.getElementById("GFG_UP");
+        var el_down = document.getElementById("GFG_DOWN");
+
+ 
+
+        var arr = ["GFG", "GeeksForGeeks", "Geek", "Geeks"];
+        var val = "Geek";
+
+ 
+
+        el_up.innerHTML = "Click on the button to "
+            + "search the element.<br>"
+            + "Array - [" + arr +
+            "]<br>Element - '" + val + "'";
+
+ 
+
+        function gfg_Run() {
+            el_down.innerHTML = $.inArray(val, arr);
+        }
+
+ 
+
+    </script>
+
+ 
+
+
+<!--####MAKE ARRAY METHOD()#####-->
+
+ 
+
+
+<div>First</div>
+<div>Second</div>
+<div>Third</div>
+<div>Fourth</div>
+
+ 
+
+    <script>
+        var elems = document.getElementsByTagName("div");
+        // Convert the NodeList to an Array
+        var arr = jQuery.makeArray(elems);
+        // Use an Array method on list of dom elements
+        arr.reverse();
+        $(arr).appendTo(document.body);
+        //make p tag texts to array
+</script>
+
+ 
+
+
+<!--#### MERGE METHOD()#####-->
+<h1 style="color: green">
+        merge method in jquery
+</h1>
+
+ 
+
+    <h3>JQuery | merge() method</h3>
+
+ 
+
+    <b>First = [ "a", "b", "c" ]</b><br>
+<b>Second = [ "d", "e", "f" ]</b>
+<br>
+<p>Click on button to merge</p>
+<button onclick="geek()">Click</button>
+<br><br>
+<b id="geeks"></b>
+
+ 
+
+    <script>
+        function geek() {
+            var first = ["a", "b", "c"];
+            var second = ["d", "e", "f"];
+            var n = $.merge(first, second);
+            document.getElementById("geeks").innerHTML = "Merged : [" + n + "]";
+            //put all the a to f in one array
+</script>
+
+ 
+
+ 
+
+    <!--#### EXTEND METHOD()#####-->
+<h1 style="color: green">
+        GeeksForGeeks
+</h1>
+
+ 
+
+    <h3>JQuery | extend() method</h3>
+<p>Merge two objects in One object.</p>
+<p id="geeks"> </p>
+
+ 
+
+
+<script>
+        var value1 = {
+            geeks1: 0,
+            geeks2: { topic1: 52, topic2: 100 },
+            geeks3: 97
+        };
+        var value2 = {
+            geeks2: { topic1: 200 },
+            geeks4: 100
+        };
+
+ 
+
+        // Merge value2 into value1
+        $.extend(value1, value2);
+
+ 
+
+        // Assuming JSON.stringify - not available in IE<8
+        $("#geeks").append(JSON.stringify(value1));
+</script>
+
+ 
+
+ 
+
+    <!--#### EACH METHOD()#####-->
+<h1>jquery each</h1>
+<ul>
+<li>apple</li>
+<li>orange</li>
+<li>banana</li>
+<li>grapes</li>
+<li>papaya</li>
+</ul>
+
+ 
+
+    <script>
+        $(document).ready(function () {
+            $('li').each(function () {
+                console.log($(this).text());
+
+ 
+
+            });
+            //run each method for all the list tag
+        });
+</script>
+
+ 
+
+ 
+
+    <!--#### MAP METHOD()#####-->
+<h1> Welcome to the javaTpoint.com </h1>
+
+ 
+
+    <h3> It is an example of using jQuery map() method </h3>
+<p> <b> The original array is: </b> [55, 12, 49, 89, 34, 88]  </p>
+<p> Click the following button to see the effect. </p>
+<button> Click me </button>
+<p id="p1"> </p>
+
+ 
+
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                var array = [55, 12, 49, 89, 34, 88];
+                var newArray = jQuery.map(array, function (val) {
+                    return val + 5;
+                });
+                document.getElementById('p1').innerHTML = "<b> The new array is: </b>" + JSON.stringify(newArray);
+            });
+        });
+            //ADD 5 VALUE IN THE EXISTING ARRAY
+
+ 
+
+    </script>
+
+ 
+
+ 
+
+ 
+
+</body>
+</html>
